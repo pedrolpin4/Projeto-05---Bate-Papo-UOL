@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.negrito {
+    font-weight: bold;
+}
+
+.top-box{
+    width: 100vw;
+    height: 80px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    padding: 0 22px 0 22px;
+}
+
+.top-box img{
+    width: 75px;
+    height: 53px;
+}
+
+.top-box ion-icon{
+    width: 42px;
+    height: 31px;
+}
+
+.chat{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 106px;
+    padding-bottom: 80px;
+    background: #e5e5e5;
+    z-index: 0;
+    flex-shrink: 0;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat div{
+    width: 100vw;
+    height: auto;
+    padding: 10px 8px 10px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 2px;
+    margin-top: 4px;
+    font-size: 14px;
+    flex-wrap: wrap;
+    line-height: 20px;
+}
+
+.regular-message{
+    background: #FFFFFF;
+}
+
+.private-message{
+    background: #FFDEDE;
+}
+
+.status-message{
+    background: #DCDCDC;
+}
+
+.horario{
+    color: #AAAAAA;
+    margin-right: 10px;
+}
+
+.message-box{
+    width: 100vw;
+    height: 80px;
+    background: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    padding: 0 18px 0 18px;
+}
+
+.message-box p{
+    font-size: 18px;
+}
+
+.message-box ion-icon {
+    width: 26px;
+    height: 26px;
+}
+
