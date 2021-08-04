@@ -1,6 +1,4 @@
 let chat = "";
-let messagesArray = [];
-let length = 0;
 let user = {};
 
 let chatRequest = function() {
@@ -10,19 +8,16 @@ let chatRequest = function() {
 
 let chatOrganizer = answer => {
     let answerArray = answer.data;
-    length = answerArray.length;
-    chat = ""
-    messagesArray = []
+    chat = "";
     answerArray.forEach(messageCreator);
+    scrollIntoView();
 }
 
 
 let messageCreator = element => {
     let message = `<li class = ${categorySeparator(element)}>
-            <p> <span class="time">(${element.time})</span><span class = "negrito"></span>${element.from}</span> para <span class = "negrito">${element.to}</span>: ${element.text}</p>
+            <p> <span class="time">(${element.time})</span><span class = "negrito">${element.from}</span> para <span class = "negrito">${element.to}</span>: ${element.text}</p>
     </li>`
-
-    messagesArray.push(message);
     chat += message;
     document.querySelector(".chat").innerHTML = chat;
 } 
@@ -39,14 +34,18 @@ let categorySeparator = element => {
 
 }
 
-scrollIntoView = function(){
-    let lastMessage = document.querySelector(messagesArray[length-1]);
-    lastMessage.scrollIntoView();
+let messageBefore = "";
+
+scrollIntoView = function() {
+    let lastMessage = document.querySelector(".chat li:last-child");
+    if (messageBefore != lastMessage.innerHTML){
+        lastMessage.scrollIntoView();
+    }
+    messageBefore = lastMessage.innerHTML;
 }
 
 chatRequest();
 
 setInterval(chatRequest, 3000);
-setInterval(scrollIntoView, 3000);
 
 
