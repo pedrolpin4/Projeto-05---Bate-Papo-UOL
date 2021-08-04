@@ -13,23 +13,23 @@
 <body>
     <div class="top-box">
         <img src="./images/logo 1.png"/>
-        <ion-icon name = "people"></ion-icon>
+        <button class = "hub-button" onclick = ""> <ion-icon name = "people"></ion-icon></button>
     </div>
-    <div class="chat">
-        <div class="status-message">
-            <p><span class = "negrito"><span class="horario">(09:22:53)</span>Maria</span> sai da sala...</p>
-        </div>
-        <div class="regular-message">
-            <p> <span class = "negrito"><span class="horario">(09:21:53)</span>Maria</span> para <span class = "negrito">Todos</span>: Bom diaaaaa!!!</p>
-        </div>
-        <div class="private-message">
-            <p><span class = "negrito"><span class="horario">(09:22:23)</span>João</span> reservadamente para <span class = "negrito">Maria</span>: Oiii, gatinha!! Vc é um anjinho</p>
+    <div class="hub">
+        <div class="hub-name">
+            <p>Escolha um contato</p>
+            <p>para enviar mensagem:</p>
         </div>
     </div>
+    <ul class="chat">
+    </ul>
     <div class="message-box">
-        <p>Escreva aqui...</p>
-        <ion-icon name = "paper-plane"></ion-icon>
+        <input type = "text" placeholder="Escreva aqui..."></input>
+        <button class = "send-message" onclick = ""><ion-icon name = "paper-plane"></ion-icon></button>
     </div>
-</body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js" data-stencil-namespace="ionicons"></script>
+<script src="./js/script.js"></script>
+</body>
 </html>
