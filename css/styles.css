@@ -36,14 +36,23 @@ input:focus {
     padding: 0 17px 0 22px;
 }
 
-.hub{
+.top-box img{
+    width: 75px;
+    height: 53px;
+}
+
+.top-box ion-icon{
+    width: 42px;
+    height: 31px;
+}
+
+.hub-showed{
     width: 259px;
     height: 100vh;
-    background: #FFFFFF;
-    display: none;
+    display: flex;
     flex-direction: column;
-    top: 0px;
-    justify-content: flex-start;
+    align-items: flex-start;
+    background: #FFFFFF;
     z-index: 2;
 }
 
@@ -57,16 +66,6 @@ input:focus {
     font-weight: bold;
     width: 259px;
     height: 84px;
-}
-
-.top-box img{
-    width: 75px;
-    height: 53px;
-}
-
-.top-box ion-icon{
-    width: 42px;
-    height: 31px;
 }
 
 .hub-button{

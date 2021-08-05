@@ -18,6 +18,21 @@ setInterval(function (){
     axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/status", user);
 }, 5000);
 
+let participants = [];
+
+let participantsRequest = function(){
+    participants = [];
+    axios.get ("https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/participants")
+    .then(printParticipants)
+}
+
+let printParticipants = function(answer){
+    participants = answer.data;
+    console.log(participants);
+}
+
+setInterval(participantsRequest(), 3000);
+
 let chatRequest = function() {
     let request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/messages");
     request.then(chatOrganizer);
@@ -80,4 +95,10 @@ let messageCreator = function(message){
     message.type = "message";
 }
 
+let showHub = function (){
+    let hub = document.querySelector(".hub");
+    console.log(hub);
+    hub.classList.remove("hub");
+    hub.classList.add("hub-showed");
+}
 
