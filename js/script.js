@@ -1,5 +1,22 @@
 let chat = "";
 let user = {};
+user.name = prompt("What's your pretty name?");
+
+let pullName = function (){
+    axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/participants",
+    user)
+    .catch(treatError);
+}
+
+let treatError = function(error){
+    user.name = prompt("What's your pretty name?");
+}
+
+pullName();
+
+setInterval(function (){
+    axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/status", user);
+}, 5000);
 
 let chatRequest = function() {
     let request = axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/messages");
@@ -9,12 +26,12 @@ let chatRequest = function() {
 let chatOrganizer = answer => {
     let answerArray = answer.data;
     chat = "";
-    answerArray.forEach(messageCreator);
+    answerArray.forEach(messageApiCreator);
     scrollIntoView();
 }
 
 
-let messageCreator = element => {
+let messageApiCreator = element => {
     let message = `<li class = ${categorySeparator(element)}>
             <p> <span class="time">(${element.time})</span><span class = "negrito">${element.from}</span> para <span class = "negrito">${element.to}</span>: ${element.text}</p>
     </li>`
@@ -47,5 +64,20 @@ scrollIntoView = function() {
 chatRequest();
 
 setInterval(chatRequest, 3000);
+
+let sendMessage = function (){
+    let message = {};
+    messageCreator(message);
+    console.log(message);
+    axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/messages", message).then(chatRequest);
+}
+
+let messageCreator = function(message){
+    message.from = user.name;
+    message.to = "todos";
+    let value = document.querySelector("input").value;
+    message.text = value;
+    message.type = "message";
+}
 
 
