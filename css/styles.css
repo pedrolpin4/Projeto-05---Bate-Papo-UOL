@@ -7,6 +7,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 input:focus {
@@ -21,6 +22,62 @@ input:focus {
     font-style: italic;
 }
 
+.entry-screen{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    z-index: 4;
+    position: fixed;
+    background:#FFFFFF;
+    top: 0px;
+    left: 0px;
+}
+
+.entry-screen img{
+    width: 130px;
+    height: 92px;
+    margin-top: 72px;
+    margin-bottom: 94px;
+}
+
+.entry-screen input{
+    width: 261px;
+    height: 54px;
+    border: 1px solid #D7D7D7;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;  
+}
+
+.entry-screen input ::placeholder { 
+    color: #AEAEAE;
+    opacity: 1;
+  }
+  
+.entry-screen input :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #aeaeae;
+  }
+  
+.entry-screen input ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #aeaeae;
+  }
+
+.entry-screen button {
+    width: 109px;
+    height: 45px;
+    font-size: 18px;
+    text-align: center;
+    background: #E7E7E7;
+    border-radius: 9px;
+    border-color: #e7e7e7;  
+    color: #696969;
+}
+
 .top-box{
     width: 100vw;
     height: 80px;
@@ -32,7 +89,7 @@ input:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     padding: 0 17px 0 22px;
 }
 
@@ -46,27 +103,6 @@ input:focus {
     height: 31px;
 }
 
-.hub-showed{
-    width: 259px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: #FFFFFF;
-    z-index: 2;
-}
-
-.hub-name{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    size: 16px;
-    line-height: 18.75px;
-    font-weight: bold;
-    width: 259px;
-    height: 84px;
-}
 
 .hub-button{
     background: none;
@@ -79,7 +115,6 @@ input:focus {
     padding-top: 106px;
     padding-bottom: 80px;
     background: #e5e5e5;
-    z-index: 0;
     flex-shrink: 0;
     overflow-y: scroll;
     display: flex;
@@ -128,7 +163,7 @@ input:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     padding: 0 18px 0 18px;
 }
 
@@ -139,19 +174,19 @@ input:focus {
     border: none;
 }
 
-::placeholder {
+.message-box input ::placeholder {
     color: black;
     opacity: 1;
     font-style: italic;
 }
 
-:-ms-input-placeholder{
+.message-box input :-ms-input-placeholder{
     color: black;
     opacity: 1;
     font-style: italic;
 }
 
-::-ms-input-placeholder{
+.message-box input ::-ms-input-placeholder{
     color: black;
     font-style: italic;
 }

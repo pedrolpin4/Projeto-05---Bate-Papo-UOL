@@ -11,20 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top-box">
-        <img src="./images/logo 1.png"/>
-        <button class = "hub-button" onclick = "showHub()"> <ion-icon name = "people"></ion-icon></button>
+    <div class="entry-screen">
+        <img src = "images/logo 2.png"/>
+        <input class = "user-name" type = "text" placeholder="Enter your pretty name"></input> 
+        <button class = "name-sender" onclick="nameTheUser()">Enter</button>
     </div>
-    <div class="hub">
-        <div class="hub-name">
-            <p>Escolha um contato</p>
-            <p>para enviar mensagem:</p>
-        </div>
+    <div class="top-box">
+        <img src="./images/logo 2.png"/>
+        <button class = "hub-button"> <ion-icon name = "people"></ion-icon></button>
     </div>
     <ul class="chat">
     </ul>
     <div class="message-box">
-        <input type = "text" placeholder="Escreva aqui..."></input>
+        <input class = "message-input" type = "text" placeholder="Escreva aqui..."></input>
         <button class = "send-message" onclick = "sendMessage()"><ion-icon name = "paper-plane"></ion-icon></button>
     </div>
 
