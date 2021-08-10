@@ -11,6 +11,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="hidden hub">
+        <div class="participants-hub-title">
+            <p>Escolha um contato</p>
+            <p>para enviar mensagem:</p>
+        </div>
+        <ul class="participants-hub">
+            <li> <ion-icon name = "people" onclick = "verifyCheck()"></ion-icon><p>Todos</p><ion-icon name = "checkmark-sharp" class = "check"></ion-icon></li>
+        </ul>
+        <div class="privacy-hub-title">
+            <p>Escolha a visibilidade:</p>
+        </div>
+        <ul class="privacy-hub">
+            <li onclick = "verifyCheck()"><ion-icon name="lock-open" ></ion-icon><p>Público</p><ion-icon name = "checkmark-sharp" class = "check"></ion-icon></li>
+            <li onclick = "verifyCheck()"><ion-icon name = "lock-closed"></ion-icon><p>Reservadamente</p><ion-icon name = "checkmark-sharp" class = "check hidden"></ion-icon></li>
+        </ul>
+    </div>
+    <div class="hidden container" onclick = "unshowHub()"></div>
     <div class="entry-screen">
         <img src = "images/logo 2.png"/>
         <input class = "user-name" type = "text" placeholder="Enter your pretty name"></input> 
@@ -18,17 +35,19 @@
     </div>
     <div class="top-box">
         <img src="./images/logo 2.png"/>
-        <button class = "hub-button"> <ion-icon name = "people"></ion-icon></button>
+        <button class = "hub-button" onclick="showHub()"> <ion-icon name = "people"></ion-icon></button>
     </div>
     <ul class="chat">
     </ul>
     <div class="message-box">
-        <input class = "message-input" type = "text" placeholder="Escreva aqui..."></input>
-        <button class = "send-message" onclick = "sendMessage()"><ion-icon name = "paper-plane"></ion-icon></button>
+        <div class="message-block">
+            <input class = "message-input" type = "text" placeholder="Escreva aqui..."></input>
+            <p class="message-info">Enviando para Todos</p>
+        </div>
+        <button class = "send-message" onclick = "sendMessage()"><ion-icon name = "paper-plane-outline"></ion-icon></button>
     </div>
-
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js" data-stencil-namespace="ionicons"></script>
+<script type = "module" src = "https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js" data-stencil-namespace="ionicons"></script>
 <script src="./js/script.js"></script>
 </body>
 </html>

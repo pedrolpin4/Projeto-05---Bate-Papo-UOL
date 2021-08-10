@@ -22,6 +22,11 @@ input:focus {
     font-style: italic;
 }
 
+.hidden{
+    display: none;
+    opacity: 0;
+}
+
 .entry-screen{
     width: 100vw;
     height: 100vh;
@@ -167,26 +172,41 @@ input:focus {
     padding: 0 18px 0 18px;
 }
 
-.message-box input{
-    width: calc(100vw - 52px);
-    font-size: 18px;
+.message-block {
+    width: calc(100vw - 70px);
+    position: fixed;
+    left: 18px;
+    display: flex;
+    flex-direction: column;
     height: 80px;
+    padding: 10px 0px 0px 0px;
+}
+
+.message-info{
+    font-size: 14px;
+    color: #AEAEAE;
+}
+
+.message-block input{
+    width: calc(100vw - 70px);
+    font-size: 18px;
+    height: 40px;
     border: none;
 }
 
-.message-box input ::placeholder {
+.message-block input ::placeholder {
     color: black;
     opacity: 1;
     font-style: italic;
 }
 
-.message-box input :-ms-input-placeholder{
+.message-block input :-ms-input-placeholder{
     color: black;
     opacity: 1;
     font-style: italic;
 }
 
-.message-box input ::-ms-input-placeholder{
+.message-block input ::-ms-input-placeholder{
     color: black;
     font-style: italic;
 }
@@ -194,9 +214,96 @@ input:focus {
 .message-box ion-icon {
     width: 26px;
     height: 26px;
+    position: fixed;
+    right: 18px;
+    bottom: 27px;
 }
 
 .send-message{
     background: none;
     border: none;
+}
+
+.hub{
+    width: 259px;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #FFFFFF;
+    z-index: 4;
+}
+
+.hub div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    size: 16px;
+    line-height: 18.75px;
+    font-weight: bold;
+    width: 259px;
+}
+
+.hub ul{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    flex-shrink: 0;
+    overflow-y: scroll;
+}
+
+.participants-hub-title{
+    height: 84px;
+    margin: 10px 0px;
+}
+
+.privacy-hub-title{
+    height: 66px;
+    margin: 10px 0px;
+}
+
+.participants-hub li, .privacy-hub li{
+    display: flex;
+    font-size: 16px;
+    width: 230px;
+    height: 36px;
+    margin: 0px 5px 0px 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.participants-hub ion-icon, .privacy-hub ion-icon{
+    font-size: 26px;
+    margin-right: 9px;
+}
+
+.participants-hub p{
+    width: 130px;
+    flex-shrink: 0;
+    overflow-x: hidden;
+}
+
+.privacy-hub p {
+    width: 130px;
+    flex-shrink: 0;
+    overflow-x: hidden;
+}
+
+.check{
+    color: green;
+    font-size: 20px;
+    opacity: 1;
+}
+
+.container{
+    position: absolute;
+    background: black;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    opacity: 0.6;
+    width: 100vw;
+    height: 100vh;
 }

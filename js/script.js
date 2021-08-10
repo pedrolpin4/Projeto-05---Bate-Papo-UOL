@@ -90,3 +90,48 @@ let sendMessage = function (){
     document.querySelector(".message-input").value = "";
     axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/messages", message).then(chatRequest);
 }
+
+let participants = [];
+
+let pushParticipants = function(answer){
+    participants = answer.data;
+}
+
+let participantsRequest = function(){
+    participants = [];
+    axios.get ("https://mock-api.bootcamp.respondeai.com.br/api/v3/uol/participants")
+    .then(pushParticipants)
+}
+
+setInterval(participantsRequest(), 10000);
+
+let printParticipant = participant => {
+    let participantName = `<li onclick = "verifyCheck()"> <ion-icon name="person-circle"></ion-icon>
+    <p class = "user-name">${participant.name}</p> <ion-icon class = "check hidden" name="checkmark-sharp"></ion-icon></li>`;
+    document.querySelector(".participants-hub").innerHTML += participantName;
+}
+
+
+let showHub = function (){
+    let hub = document.querySelector(".hub");
+    let container = document.querySelector(".container");
+    container.classList.remove("hidden");
+    hub.classList.remove("hidden");
+    participants.forEach(printParticipant);
+}
+
+let refreshParticipants = setInterval(participants.forEach(printParticipant), 10000);
+
+let unshowHub = function(){
+    let hub = document.querySelector(".hub");
+    let container = document.querySelector(".container");
+    container.classList.add("hidden");
+    hub.classList.add("hidden");
+    document.querySelector(".participants-hub").innerHTML = `<li> <ion-icon name = "people"></ion-icon><p class = "user-name">Todos</p>
+    <ion-icon class = "check" name = "checkmark-sharp"><ion-icon></li>`;
+    clearInterval(refreshParticipants);
+}
+
+let verifyCheck = function(){
+    console.log("tá working");
+}
